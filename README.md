@@ -13,7 +13,7 @@ Minimal bookmark manager for [rofi](https://github.com/DaveDavenport/rofi) launc
 ## Installation
 
 * Clone this repository 
-    `git clone https://`
+    `git clone https://github.com/Strix007/rofi-bookmarks.git`
 * Make directory
     `mkdir -p ~/.config/rofi/bookmarks`
 * Cd into this repository

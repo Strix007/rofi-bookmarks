@@ -26,5 +26,5 @@ elif [[ $INPUT == *"."* ]]; then
 elif [[ -z $INPUT  ]]; then
     exit 0
 else
-    firefox "http://www.google.com/search?q=$INPUT"
+    firefox --search $INPUT
 fi

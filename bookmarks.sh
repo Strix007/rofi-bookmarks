@@ -3,6 +3,7 @@
 DIR="$HOME/.config/rofi/bookmarks/"
 THEME="bookmarks"
 BOOKMARKS_FILE="$HOME/.config/rofi/bookmarks/.bookmarks"
+BROWSER="firefox"
 
 # Check if there is a bookmarks file and if not, make one
 
@@ -22,9 +23,9 @@ if   [[ $INPUT == "+"* ]]; then
 elif [[ $INPUT == "_"* ]]; then
     INPUT=$(echo $INPUT | sed 's/_//') && sed -i "/$INPUT/d" $BOOKMARKS_FILE
 elif [[ $INPUT == *"."* ]]; then
-    firefox $INPUT
+    $BROWSER $INPUT
 elif [[ -z $INPUT  ]]; then
     exit 0
 else
-    firefox --search $INPUT
+    $BROWSER --search $INPUT
 fi

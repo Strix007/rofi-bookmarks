@@ -48,8 +48,7 @@ Minimal bookmark manager for [rofi](https://github.com/DaveDavenport/rofi) launc
 ## Saved Bookmarks
 
 * The bookmarks are saved in a hidden plain text file in ~/.config/rofi/bookmarks/.bookmarks.
-* You can manually add bookmarks to `~/.config/rofi/bookmarks/.bookmarks` by starting a new line with `\n` then your bookmark.
+* You can manually add bookmarks to `~/.config/rofi/bookmarks/.bookmarks` by starting a new line and adding your bookmark.
     For Example -
-    `\nyoutube.com`
+    `youtube.com`
     **Note:** Make sure every bookmark is on a seperate line.
-

@@ -57,7 +57,8 @@ elif [[ $INPUT == *"."* ]]; then
 elif [[ -z $INPUT  ]]; then
     exit 0
 else
-    $BROWSER --search $INPUT
+    $BROWSER -new-tab "https://www.google.com/search?q=$INPUT"
+    # $BROWSER --search $INPUT
     # Set search engine (comment $BROWSER --search $INPUT and uncomment the following (example is duckducgo)
     # $BROWSER "http://www.duckduckgo.com/search?q=$INPUT"
 fi

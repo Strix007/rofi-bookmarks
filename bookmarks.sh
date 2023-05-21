@@ -41,19 +41,19 @@ if [[ ! -a "${BOOKMARKS_FILE}" ]]; then
     touch "${BOOKMARKS_FILE}"
 fi
 
-INPUT=$(cat $BOOKMARKS_FILE | rofi -dmenu -theme ${DIR}/${THEME}.rasi -p "#B#")
+INPUT=$(rofi -dmenu -theme "${DIR}"/${THEME}.rasi -p "#B#" < "$BOOKMARKS_FILE")
 
 if   [[ $INPUT == "+"* ]]; then
-    INPUT=$(echo $INPUT | sed 's/+//') 
+    INPUT=$(echo $INPUT | sed 's/+//')
     if [[ $INPUT == *"."* ]]; then
-        echo "$INPUT" >> $BOOKMARKS_FILE
+        echo "$INPUT" >> "$BOOKMARKS_FILE"
     else 
-        INPUT="${INPUT}.com" && echo "$INPUT" >> $BOOKMARKS_FILE
+        INPUT="${INPUT}.com" && echo "$INPUT" >> "$BOOKMARKS_FILE"
     fi
 elif [[ $INPUT == "_"* ]]; then
-    INPUT=$(echo $INPUT | sed 's/_//') && sed -i "/$INPUT/d" $BOOKMARKS_FILE
+    INPUT=$(echo "$INPUT" | sed 's/_//') && sed -i "/$INPUT/d" "$BOOKMARKS_FILE"
 elif [[ $INPUT == *"."* ]]; then
-    $BROWSER $INPUT
+    $BROWSER "$INPUT"
 elif [[ -z $INPUT  ]]; then
     exit 0
 else
